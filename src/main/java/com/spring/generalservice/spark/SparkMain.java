@@ -68,5 +68,25 @@ public class SparkMain {
             response.type("application/json");
             return EchoService.processEchoSecure(request, response);
         }, new JsonTransformer());
+
+        post("/pureEcho", (request, response) -> {
+            response.type("text/plain");
+            return EchoService.processPureEcho(request, response);
+        }, new JsonTransformer());
+
+       get("/pureEcho", (request, response) -> {
+          response.type("text/plain");
+          return EchoService.processPureEcho(request, response);
+       }, new JsonTransformer());
+
+       put("/pureEcho", (request, response) -> {
+          response.type("text/plain");
+          return EchoService.processPureEcho(request, response);
+       }, new JsonTransformer());
+
+       delete("/pureEcho", (request, response) -> {
+          response.type("text/plain");
+          return EchoService.processPureEcho(request, response);
+       }, new JsonTransformer());
     }
 }

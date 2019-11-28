@@ -3,6 +3,7 @@ package com.spring.generalservice.service;
 import com.google.gson.Gson;
 import com.spring.generalservice.dao.EchoRequest;
 import com.spring.generalservice.dao.EchoResponse;
+import com.spring.generalservice.dao.PureEcho;
 import spark.Request;
 import spark.Response;
 
@@ -65,6 +66,25 @@ public class EchoService {
             echoResponse.message = "Response : " + echoRequest.message;
         }
         return echoResponse;
+    }
+
+    public static PureEcho processPureEcho(Request request, Response response) throws Exception {
+        PureEcho pureEchoResponse = new PureEcho();
+        if(request!=null){
+           pureEchoResponse.setPayload(request.body());
+           String url = request.url();
+           if(request.queryParams()!=null){
+              url+="?";
+              for(String queryParam : request.queryParams()){
+                 url+=queryParam+"="+request.queryParams(queryParam)+"&";
+              }
+              url = url.substring(0,url.length()-1);
+           }
+           pureEchoResponse.setUrl(url);
+           pureEchoResponse.setStatus(response.status());
+        }
+        System.out.println("pureEcho response: "+pureEchoResponse);
+        return pureEchoResponse;
     }
 
 }
