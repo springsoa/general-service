@@ -71,7 +71,7 @@ public class EchoService {
     public static PureEcho processPureEcho(Request request, Response response) throws Exception {
         PureEcho pureEchoResponse = new PureEcho();
         if(request!=null){
-           pureEchoResponse.setPayload(request.body());
+           pureEchoResponse.setBody(request.body());
            String url = request.url();
            if(request.queryParams()!=null){
               url+="?";

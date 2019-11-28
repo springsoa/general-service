@@ -2,7 +2,7 @@ package com.spring.generalservice.dao;
 
 public class PureEcho {
    private String url;
-   private String payload;
+   private String body;
    private int status;
 
    public String getUrl() {
@@ -13,12 +13,12 @@ public class PureEcho {
       this.url = url;
    }
 
-   public String getPayload() {
-      return payload;
+   public String getBody() {
+      return body;
    }
 
-   public void setPayload(String payload) {
-      this.payload = payload;
+   public void setBody(String body) {
+      this.body = body;
    }
 
    public int getStatus() {
@@ -33,7 +33,7 @@ public class PureEcho {
    public String toString() {
       return "PureEcho{" +
         "url='" + url + '\'' +
-        ", payload='" + payload + '\'' +
+        ", body='" + body + '\'' +
         ", status=" + status +
         '}';
    }
