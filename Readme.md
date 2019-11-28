@@ -2,7 +2,7 @@ Testing echo:
 
     Method: Post 
     
-    URL   : https://basic-authentication-ws.herokuapp.com/echo
+    URL   : https://general-service-dev.herokuapp.com/echo
     
     Payload:
      
@@ -15,7 +15,7 @@ Testing echoSecure:
 
     Method: Post 
     
-    URL   : https://basic-authentication-ws.herokuapp.com/echoSecure
+    URL   : https://general-service-dev.herokuapp.com/echoSecure
     
     Authentication : Basic Auth, username : testU, password: testP
     
@@ -26,11 +26,24 @@ Testing echoSecure:
     }
 
 
+Testing pureEcho:
+
+    Method: Put/Get/Post/Delete 
+    
+    URL   : https://general-service-dev.herokuapp.com/pureEcho?myparam=123
+    
+    Payload:
+    {
+        "message": "Test Message"
+    }
+
+
+
 HR Service : employees
     
     Method: Get
     
-    URL : https://basic-authentication-ws.herokuapp.com/hr/employees
+    URL : https://general-service-dev.herokuapp.com/hr/employees
     
     Response : 
 ```javascript
@@ -79,7 +92,7 @@ HR Service : employees
     
     Method: Get
     
-    URL : https://basic-authentication-ws.herokuapp.com/hr/employee/Name/Chintan
+    URL : https://general-service-dev.herokuapp.com/hr/employee/Name/Chintan
     
     Response : 
 ```javascript
