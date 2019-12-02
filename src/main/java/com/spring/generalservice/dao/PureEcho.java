@@ -1,9 +1,12 @@
 package com.spring.generalservice.dao;
 
+import java.util.Map;
+
 public class PureEcho {
    private String url;
    private String body;
    private int status;
+   private Map<String,String> headers;
 
    public String getUrl() {
       return url;
@@ -29,12 +32,21 @@ public class PureEcho {
       this.status = status;
    }
 
+   public Map<String, String> getHeaders() {
+      return headers;
+   }
+
+   public void setHeaders(Map<String, String> headers) {
+      this.headers = headers;
+   }
+
    @Override
    public String toString() {
       return "PureEcho{" +
         "url='" + url + '\'' +
         ", body='" + body + '\'' +
         ", status=" + status +
+        ", headers=" + headers +
         '}';
    }
 }

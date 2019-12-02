@@ -8,6 +8,8 @@ import spark.Request;
 import spark.Response;
 
 import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EchoService {
 
@@ -79,6 +81,13 @@ public class EchoService {
                  url+=queryParam+"="+request.queryParams(queryParam)+"&";
               }
               url = url.substring(0,url.length()-1);
+           }
+           if(request.headers()!=null){
+              Map<String,String> headers = new HashMap<>();
+              for(String key: request.headers()){
+                  headers.put(key, request.headers(key));
+              }
+              pureEchoResponse.setHeaders(headers);
            }
            pureEchoResponse.setUrl(url);
            pureEchoResponse.setStatus(response.status());
