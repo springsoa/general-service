@@ -86,6 +86,7 @@ public class EchoService {
               Map<String,String> headers = new HashMap<>();
               for(String key: request.headers()){
                   headers.put(key, request.headers(key));
+                  System.out.println("EchoService.processPureEcho header " + key + " -> " + request.headers(key) );
               }
               pureEchoResponse.setHeaders(headers);
            }
