@@ -106,5 +106,9 @@ public class SparkMain {
             return CookieService.storeCookiesNone(request, response);
         });
 
+        get("/storeCookiesSecure.html", (request, response) -> {
+            response.type("text/html");
+            return CookieService.storeCookiesSecure(request, response);
+        });
     }
 }
