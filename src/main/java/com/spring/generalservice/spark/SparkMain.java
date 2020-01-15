@@ -1,10 +1,7 @@
 package com.spring.generalservice.spark;
 
 
-import com.spring.generalservice.service.EchoService;
-import com.spring.generalservice.service.EnvironmentService;
-import com.spring.generalservice.service.HRService;
-import com.spring.generalservice.service.JsonTransformer;
+import com.spring.generalservice.service.*;
 
 import java.util.Map;
 
@@ -88,5 +85,26 @@ public class SparkMain {
           response.type("text/plain");
           return EchoService.processPureEcho(request, response);
        }, new JsonTransformer());
+
+        get("/displayCookies.html", (request, response) -> {
+            response.type("text/html");
+            return CookieService.displayCookies(request, response);
+        });
+
+        get("/storeCookies.html", (request, response) -> {
+            response.type("text/html");
+            return CookieService.storeCookies(request, response);
+        });
+
+        get("/storeCookiesLax.html", (request, response) -> {
+            response.type("text/html");
+            return CookieService.storeCookiesLax(request, response);
+        });
+
+        get("/storeCookiesNone.html", (request, response) -> {
+            response.type("text/html");
+            return CookieService.storeCookiesNone(request, response);
+        });
+
     }
 }
