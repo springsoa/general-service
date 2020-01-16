@@ -21,24 +21,24 @@ public class CookieService {
     public static String storeCookies(Request request, Response response) throws Exception {
         response.cookie("Heroku-Username", "Anonymous-StoreCookie", 10000, true );
         response.cookie("Heroku-SessionId", "SessionId-StoreCookie", 10000, true );
-        return "Store Cookies";
+        return "Cookies are Stored with  <b> no Same Site attribute </b> <br/> Heroku-Username : Anonymous-StoreCookie <br/> Heroku-SessionId : SessionId-StoreCookie ";
     }
 
     public static String storeCookiesNone(Request request, Response response) {
         response.header("Set-Cookie","Heroku-Username=Anonymous-StoreCookie-None; Secure; SameSite=None");
         response.header("Set-Cookie","Heroku-SessionId=SessionId-StoreCookie-None; Secure; SameSite=None");
-        return "Store Cookies None";
+        return "Cookies are Stored with SameSite = <b> None </b> <br/> Heroku-Username : Anonymous-StoreCookie-None <br/> Heroku-SessionId : SessionId-StoreCookie-None ";
     }
 
     public static String storeCookiesLax(Request request, Response response) {
         response.header("Set-Cookie","Heroku-Username=Anonymous-StoreCookie-Lax; Secure; SameSite=Lax");
         response.header("Set-Cookie","Heroku-SessionId=SessionId-StoreCookie-Lax; Secure; SameSite=Lax");
-        return "Store Cookies Lax";
+        return "Cookies are Stored with SameSite = <b> Lax </b> <br/> Heroku-Username : Anonymous-StoreCookie-Lax <br/> Heroku-SessionId : SessionId-StoreCookie-Lax ";
     }
 
     public static String storeCookiesStrict(Request request, Response response) {
         response.header("Set-Cookie","Heroku-Username=Anonymous-StoreCookie-Strict; Secure; SameSite=Strict");
         response.header("Set-Cookie","Heroku-SessionId=SessionId-StoreCookie-Strict; Secure; SameSite=Strict");
-        return "Store Cookies Strict";
+        return "Cookies are Stored with SameSite = <b> Strict </b> <br/> Heroku-Username : Anonymous-StoreCookie-Strict <br/> Heroku-SessionId : SessionId-StoreCookie-Strict ";
     }
 }
