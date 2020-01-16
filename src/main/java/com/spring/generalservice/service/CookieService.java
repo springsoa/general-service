@@ -37,8 +37,8 @@ public class CookieService {
     }
 
     public static String storeCookiesSecure(Request request, Response response) {
-        response.header("Set-Cookie","Heroku-Username=Anonymous-StoreCookie-Secure; Secure; SameSite=Secur9e");
-        response.header("Set-Cookie","Heroku-SessionId=SessionId-StoreCookie-Secure; Secure; SameSite=Secur9e");
-        return "Store Cookies Lax";
+        response.header("Set-Cookie","Heroku-Username=Anonymous-StoreCookie-Secure; Secure; SameSite=Secure");
+        response.header("Set-Cookie","Heroku-SessionId=SessionId-StoreCookie-Secure; Secure; SameSite=Secure");
+        return "Store Cookies Secure";
     }
 }
