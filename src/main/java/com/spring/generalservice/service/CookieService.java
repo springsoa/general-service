@@ -36,9 +36,9 @@ public class CookieService {
         return "Store Cookies Lax";
     }
 
-    public static String storeCookiesSecure(Request request, Response response) {
-        response.header("Set-Cookie","Heroku-Username=Anonymous-StoreCookie-Secure; Secure; SameSite=Secure");
-        response.header("Set-Cookie","Heroku-SessionId=SessionId-StoreCookie-Secure; Secure; SameSite=Secure");
-        return "Store Cookies Secure";
+    public static String storeCookiesStrict(Request request, Response response) {
+        response.header("Set-Cookie","Heroku-Username=Anonymous-StoreCookie-Strict; Secure; SameSite=Strict");
+        response.header("Set-Cookie","Heroku-SessionId=SessionId-StoreCookie-Strict; Secure; SameSite=Strict");
+        return "Store Cookies Strict";
     }
 }
